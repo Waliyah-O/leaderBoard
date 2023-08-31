@@ -16,6 +16,31 @@ function App() {
 
   const sortedPlayers = [...players].sort((a, b) => b.score - a.score);
 
+  const topThree = sortedPlayers.slice(0, 3);
+  // console.log(topThree);
+
+  const topWinners = [
+    {
+      numberOne: {
+        name: topThree[0].name,
+        image: topThree[0].image,
+        score: topThree[0].score,
+      },
+      numberTwo: {
+        name: topThree[0].name,
+        image: topThree[1].image,
+        score: topThree[1].score,
+      },
+      numberThree: {
+        name: topThree[0].name,
+        image: topThree[2].image,
+        score: topThree[2].score,
+      },
+    },
+  ];
+
+  console.log(topWinners);
+
   // console.log(sortedPlayers[0]);
   // const firstPlace = sortedPlayers[0].name;
   // console.log(firstPlace);
@@ -49,8 +74,10 @@ function App() {
 
   return (
     <div className="container">
-      <div style={{ display: "flex" }}> first three {firstThree} </div>
-      <div style={{ display: "flex" }}> others {leaderBoard}</div>
+      first three
+      <div style={{ display: "flex" }}> {firstThree} </div>
+      others
+      <div style={{ display: "flex" }}> {leaderBoard}</div>
       {/* <div className="secondPlace">{}</div>
       <div className="winner"></div>
       <div className="thirdPlace"></div> */}
